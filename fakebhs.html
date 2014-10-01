@@ -1,0 +1,420 @@
+<html>
+<head>
+	<title>Fake BHS - Homepage</title>
+	<style type="text/css">
+		body{
+			background-color: #c2c2c2;
+			margin-top: 50px;
+			margin-bottom: 50px;
+			background-image: url(img/bg.gif);
+			background-repeat: repeat;
+			font-family:"Arial", Gadget, sans-serif;
+		}
+		a { color: #FF9900}
+
+		.container{
+			background-color: #FFF;
+			width: 940px;
+			margin: 0 auto;
+			padding: 3px;
+			box-shadow: 0px 0px 10px 3px rgba(119, 119, 119, 0.5);
+		}
+		
+		#quickLinks { padding: 5px 5px 0px 5px; background-color: #FF9632; height: 25px;}
+		#quickLinks ul{ margin: 0; padding: 0 0 5px 5px;}
+		#quickLinks ul li{ display: inline;}
+		#quickLinks ul li a { text-decoration: none; color: #000; font-size: 11px;}
+		#quickLinks hr { margin: 0 -5px 0 -5px; background-color: #FF8000; border: 1px dotted #FFF;}
+		
+		#logo img{ width: 100%;}
+
+		#navigation { margin: 5px 0 -5px 0px; text-align: center; }
+		#navigation ul {
+			display: inline;
+			width:940px;
+			margin: 0;
+			padding: 15px 4px 17px 0;
+			list-style: none;
+		}
+		#navigation ul li {
+			width:76px;
+			display: inline-block;
+			margin-right: -3px;
+			position: relative;padding: 11px 20px;
+			background-image: linear-gradient(#557896, #28507D 45%, #003264);
+			cursor: pointer;
+		}
+		#navigation ul li a{ color: #FFF; text-decoration: none; font-size: 12px;}
+		#navigation ul li:hover { background-image: linear-gradient(#FFB973, #FFA046 45%, #FF9B32);}
+		#navigation ul li:hover ul { display: block; visibility: visible;}
+		#navigation ul li ul {
+			padding: 0;
+			position: absolute;
+			top: 35px;
+			left: 0;
+			width: auto;
+			display: none;
+			text-align: left;
+		}
+		#navigation ul li ul li { 
+			padding: 7px 5px 7px 5px;
+			white-space: nowrap;
+			width: auto;
+			display: block; 
+			background: #003264; 
+			color: #fff;
+		}
+		#navigation ul li ul li{ font-size: 10pt; padding-left: 5px;}
+		#navigation ul li ul li:hover a { color:#000;}
+		
+
+		#login { 
+			margin-top: -8px;
+			background-image: url(img/bgLogin.gif);
+			background-repeat: repeat;
+			width:100%;
+			height:50px;
+			font-size: 12px;
+		}
+		#sep{ height: 25px; background-image: linear-gradient(#D3D3D3, #F6F6F6 50%, #FFF);}
+
+		#main{
+			clear: both; /* No floating elements allowed on either the left or the right side */
+			overflow: auto; /* Fixed div floating outside the main*/
+		}
+		#announcements { 
+			float: left;
+			margin: 0 -10px 0 -5px;
+			width: 65%;
+		}
+		#announcementItem{
+			margin: 0 30px 0 50px;
+			font-size: 15px;
+			word-wrap: break-word;
+		}
+
+		#socialLinks { 
+			float: right;
+			padding-left: 7px;
+			margin-right: 30px;
+			width: 30%;
+			border: 1px solid #FFB973;
+			box-shadow: 1.5px 1.5px 1px -0.5px rgba(0, 0, 0, 0.5);
+		}
+
+		#titleBar {
+			float: right;
+			margin: 15px 30px 0 0;
+			padding: 5px 0 5px 10px;
+			background-image: linear-gradient(#FFB973, #FFA046 45%, #FF9B32);
+			width: 30%;
+		}
+		#events { 
+			float: right;
+			width: 30%;
+			padding: 10px 5px 10px 5px;
+			margin-right: 30px;
+			background-color: #FFF1B8;
+			box-shadow: 1.5px 1.5px 1px -0.5px rgba(0, 0, 0, 0.5);
+		}
+
+		#links { 
+			float: right;
+			width: 30%;
+			height: auto;
+			padding: 10px 5px 10px 5px;
+			margin-right: 30px;
+			background-color: #FFF1B8;
+			box-shadow: 1.5px 1.5px 1px -0.5px rgba(0, 0, 0, 0.5);
+		}
+		#baysidepub { 
+			float: right;
+			margin: 15px 30px 0 0;
+			padding: 10px 3px 10px 4px;
+			width: 30%;
+			height: 250px;
+			border: 1px solid #FFB973;
+			box-shadow: 1.5px 1.5px 1px -0.5px rgba(0, 0, 0, 0.5);
+		}
+
+		#weather { 
+			float: right;
+			width: 30%;
+			padding: 10px 0 10px 10px;
+			margin-right: 30px;
+			font-size: 12px;
+			background-color: #FFF1B8;
+			box-shadow: 1.5px 1.5px 1px -0.5px rgba(0, 0, 0, 0.5);
+		}
+		#weather img{ padding:5px 10px 15px 5px;}
+
+		#footer{ margin-top: 5px; width:auto; font-size: 13px;}
+		#footerInfo{ background-color:#eee; height: 70px;}
+		#footerAddress { padding: 10px;}
+		#footerLinks { float:right; margin: -25px 0 0 0;}
+		#footerLogo { background:url(img/echalkPower.gif) no-repeat bottom right #fff; padding-bottom: 60px;}
+
+		span.qLBullet { 
+			display: inline-block;
+			background-image: url(http://static1.echalk.net/themes/global/images/icBullets.gif);
+			background-position: 0px -88px;
+			background-repeat: no-repeat;
+			width: 7px;
+			height: 10px;
+		}
+		span.headerBullet1 {
+			background-image: url(http://static1.echalk.net/themes/contemporary/images/icBullets24.png);
+			background-repeat: no-repeat;
+			display: block;
+			float: left;
+			width: 25px;
+			height: 24px;
+			position: relative;
+			z-index: 5;
+			background-color: rgb(255,153,52);
+			color: rgb(51,51,51);
+		}
+		span.headerBullet2 {
+			display: block;
+			float: left;
+			width: 16px;
+			height: 16px;
+			position: relative;
+			right: 2px;
+			top: 1px;
+			margin-right: 2px;
+			background-image: url(http://static1.echalk.net/themes/contemporary/images/icBullets16.png);
+			background-position: 0px -160px;
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="header">
+			<div id="quickLinks">
+				<ul>
+					<li><span class="qLBullet"></span><a href="">School Home</a></li>
+					<li><span class="qLBullet"></span><a href="">Login</a></li>
+					<li><span class="qLBullet"></span><a href="">Help</a></li>
+					<li><span class="qLBullet"></span><a href="">Search</a></li>
+				</ul>
+				<hr>
+			</div>
+			<div id="logo"><img src="img/logo.jpg"></div>
+			<div id="navigation">
+				<ul>
+					<li><a>DIRECTORY</a>
+						<ul>
+							<li><a>Faculty &amp; Staff</a></li>
+							<li><a>Class Pages</a></li>
+							<li><a>Group Pages</a></li>
+						</ul>
+					</li>
+					<li><a>ABOUT BHS</a>
+						<ul>
+							<li><a>Bell Schedule</a></li>
+							<li><a>Calendar - Fall 2014</a></li>
+							<li><a>Discipline code</a></li>
+							<li><a>Dress Code</a></li>
+							<li><a>History in photographs</a></li>
+							<li><a>Zero tolerance letter</a></li>
+						</ul>
+					</li>
+					<li><a>CALENDAR</a></li>
+					<li><a>ACADEMICS</a>
+						<ul>
+							<li><a>Art, Music, and Languages</a></li>
+							<li><a>Business Education / Technology</a></li>
+							<li><a>English / Language Arts</a></li>
+							<li><a>Instructional Support Services</a></li>
+							<li><a>Mathematics</a></li>
+							<li><a>Physical Education / Health</a></li>
+							<li><a>Science</a></li>
+							<li><a>Social Studies</a></li>
+							<li><a>Special Programs</a></li>
+						</ul>
+					</li>
+					<li><a>STUDENTS</a>
+						<ul>
+							<li><a>BHS Juniors</a></li>
+							<li><a>BHS Seniors</a></li>
+							<li><a>How to use eChalk</a></li>
+							<li><a>Key Club</a></li>
+							<li><a>Sports Teams</a></li>
+							<li><a>Student Organization</a></li>
+							<li><a>Transcript Request Form</a></li>
+						</ul>
+					</li>
+					<li><a>PARENTS</a>
+						<ul>
+							<li><a>Parent Resources</a></li>
+							<li><a>NYCDOE 2013-2014 School Year Calendar</a></li>
+							<li><a>Parent Registration</a></li>
+							<li><a>PTA</a></li>
+							<li><a>PTA Executive Board 2013-14</a></li>
+							<li><a>SLT Members 2013-14</a></li>
+						</ul>
+					</li>
+					<li><a>LIBRARY</a>
+						<ul>
+							<li><a>About the Library</a></li>
+							<li><a>Books at BHS - Online Book Catalog</a></li>
+							<li><a>Databases</a></li>
+							<li><a>eBooks</a></li>
+							<li><a>Noodle Tools -  Create a Works Cited Page</a></li>
+							<li><a>College &amp; Career</a></li>
+							<li><a>Homework Help</a></li>
+							<li><a>MLA Style Guide Handbook</a></li>
+							<li><a>Queens Library</a></li>
+							<li><a>Website Evaluation Worksheet</a></li>
+						</ul>
+					</li>
+					<li><a>GUIDANCE</a>
+						<ul>
+							<li><a>Announcements</a></li>
+							<li><a>College / College Now</a></li>
+							<li><a>PSAT / SAT</a></li>
+							<li><a>Scholarships / Financial Aid</a></li>
+							<li><a>Internships / Workshops</a></li>
+							<li><a>Freshmen</a></li>
+							<li><a>Sophomores</a></li>
+							<li><a>Juniors</a></li>
+							<li><a>Seniors</a></li>
+							<li><a>FAQs</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<hr>
+			<div id="login">
+				<span style="float:left; padding:15px 20px 0 10px;"><b>LOGIN</b></span>
+				<div style="padding-top: 10px;">
+					Username: <input type="text" name="fname">
+					Password: <input type="text" name="lname">
+					<input type="submit" value="LOGIN">
+					<span style="float:right; padding:5px 15px 0 0;"><a href="#">Forgot Password?</a>
+					Need Help?
+					<a href="#">English</a> | <a href="#">Espa&ntilde;ol</a></span>
+				</div>
+			</div>
+		</div>
+		<div id="sep"></div>
+		<div id="main">
+			<div id="announcements">
+				<h3 style="padding-left:30px;"><span class="headerBullet1"></span>Daily Announcements <img src="http://static3.echalk.net/images/rss_button.gif"></h2>
+				<div id="announcementItem">
+					<img src="http://static3.echalk.net/images/ico_urgent_triangle.gif" align="left"> <b>eChalk Update</b> - All student accounts have been created and all classes have been uploaded. Students: your user name is your firstname.lastname and your password is your 9 digit OSIS#. If you have any questions, please email smiller@baysidehighschool.org
+					<hr>
+				</div>
+				
+				<div id="announcementItem">
+					<b>Pupil Path Update</b> - Incoming students will receive a letter containing their pupil path user names and passwords during their guidance counselor appointment. Parent information (user names and passwords) are also on this letter.
+					<hr>
+				</div>
+				<div id="announcementItem">
+					<b style="font-size:22px;">PROSPECTIVE STUDENTS</b><br>
+					<b style="font-size:12px;">There will be 2 open house dates in the fall for the 2015-2016 school year:</b><br>
+					<br>
+					<b style="font-size:16px; color: #CC0039">Tuesday, October 21, 2014</b><br>
+					<b style="font-size:12px;">Auditorium doors will open at 6:30 pm and Information Session will begin promptly at 7 pm</b><br>
+					<b style="font-size:16px; color: #CC0039">Thursday, November 6, 2014</b><br>
+					<b style="font-size:12px;">Auditorium doors will open at 6:30 pm and Information Session will begin promptly at 7 pm</b><br>
+					<br>
+					<b style="font-size:18px;">Specialized programs:</b><br>
+					<p style="font-size:14px;">
+						<b>Q12A</b> - <a href="">Digital Art &amp; Design</a><br>
+						<b>Q12B</b> - <a href="">Music: Performance &amp; Production</a><br>
+						<b>Q12C</b> - <a href="">Environmental Engineering &amp; Technology</a><br>
+						<b>Q12D</b> - <a href="">Humanities &amp; Non-Profit Management</a><br>
+						<b>Q12E</b> - <a href="">Computer Programming &amp; Web Design</a><br>
+						<b>Q12G</b> - <a href="">Sports Medicine &amp; Management</a>
+					</p>
+					<b style="font-size:16px;"><a href="">FAQs for Students applying for 2015-2016 school year</a></b><br>
+					<br>
+					<b style="font-size:15px;">Audition Information 2014-2015<br>
+					Attention current 7th Graders:</b><br>
+					As you begin your high school search process, here are some important dates to remember for the Bayside High School Digital Art &amp; Music: Performance &amp; Production Auditions - <br>
+					<ul style="font-size:14px;">
+					<li>Sunday, November 2, 2014 - 9:30 AM</li>
+					<li>Saturday, November 15, 2014 - 2:00 PM</li>
+					<li>Sunday, November 16, 2014 - 9:30 AM</li>
+					<li>Saturday, January 10, 2015 - 9:30 AM</li>
+					</ul>
+					Plan on arriving 1/2 hour before the scheduled audition time.<br> 
+					You do not need a ticket or an appointment. 
+					<hr>
+				</div>
+				<div id="announcementItem">
+					<b><a href="#">Bayside High School School Store</a></b><br>
+					<small>Get your <b>Bayside HS</b> gear:<br>
+					shirts, hoodies, water bottles, mugs, and more!</small><br>
+					<img src="http://static3.echalk.net/www/ud00/5/5b7cf86c9cae4dfb955648db6855bb3d/Personal_Images/shop.PNG" width="200px" style="padding:5px;">
+				</div>
+			</div>
+
+			<div id="socialLinks">
+				<p><img src="img/facebook_twitter_logo.jpg" width="50px" align="left">
+				LIKE us on <a href="#">Facebook</a><br>
+				FOLLOW us on <a href="#">Twitter</a>
+				</p>
+				<p>
+				<b>Instructions for logging into:</b><br>
+				<b><a href="#">E-Chalk (log in above)</a></b><br>
+				<b><a href="#">Pupil Path (pupilpath.com)</a></b><br>
+				* In <a href="#">Korean</a><br>
+				* In <a href="#">Chinese</a><br>
+				* In <a href="#">Spanish</a>
+				</p>
+			</div>
+
+			<div id="titleBar"><span class="headerBullet2"></span><small>Upcoming Events <img src="http://static3.echalk.net/images/rss_button.gif"></small></div>
+			<div id="events">
+				<div style="font-size:12px; text-align: center;">Wednesday, October 01, 2014<br>
+				<a href="" style="color: #000;">View Monthly Calendar</a></div>
+			</div>
+
+			<div id="titleBar"><span class="headerBullet2"></span><small>Quick Links <img src="http://static3.echalk.net/images/rss_button.gif"></small></div>
+			<div id="links">
+				<a href=""><b>Bayside High School Dress Code</b></a>
+				<hr>
+				<small>Please sign up to be placed on the <b>Parent Coordinator&#39;s email distribution list.</b> The form can be found <a href="">here</a>.</small>
+				<hr>
+				<a href="" style="color:#000; font-size:19px;"><b>MOUSE Squad Tech Support Request</b></a>
+			</div>
+
+			
+			<div id="baysidepub">
+				<b>Bayside Publications</b> <img src="http://static3.echalk.net/images/rss_button.gif">
+				<hr style="margin: 0 0 0 -5px; background-color: #FFF; border: 1px dotted #000;"><br>
+				<small>Check out The Baysider: Community Edition - our newest publication!</small>
+				<img src="http://static3.echalk.net/www/ud00/5/5b7cf86c9cae4dfb955648db6855bb3d/Personal_Images/baysider.gif" width="100%">
+				<hr>
+				<img src="http://static3.echalk.net/www/bayside/images/Front-Back-Cover-2014-1.gif" height="100px" align="left">
+				<b><a href="">Soundings 2014</a></b><br>
+				<small>BHS Literary Magazine - If you would like to purchase a copy, please see Ms. Ormaechea in room 131.</small>
+			</div>
+
+			<div id="titleBar"><span class="headerBullet2"></span><small>Weather</small></div>
+			<div id="weather">
+				<img src="img/weather/rain.gif" align="left">
+				Today, 10/1/2014 <br> <b style="color: #CC0039">High: 70</b> <b style="color: #0066F3">Low: 57</b> <br> Rain showers <br> 38% chance of precipitation. <br>
+				<br>
+				<img src="img/weather/partly-cloudy.gif" align="left">
+				Tomorrow, 10/2/2014 <br> <b style="color: #CC0039">High: 70</b> <b style="color: #0066F3">Low: 57</b> <br> Mostly cloudy <br> 10% chance of precipitation. <br>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="footerInfo">
+				<div id="footerAddress">
+					<small>Bayside High School, 3224 Corporal Kennedy Street, Bayside, NY 11361-1061 <br>
+					Phone: (718) 229-7600  |  Fax: (718) 423-9566 <br>
+					<a href="#">Locate School</a></small>
+					<div id="footerLinks"><small><a href="#">Contact US</a> | <a href="#">User Policy</a></small> <img src="img/facebook_share_icon.gif"> <img src="img/twitter_share_icon.gif"></div>
+				</div>
+			</div>
+			<div id="footerLogo"></div>
+		</div>
+	</div>
+</body>
+</html>
